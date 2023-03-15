@@ -22,7 +22,7 @@
 
 ## Зависимости проекта
 
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
+![image](https://user-images.githubusercontent.com/45429645/225296088-2ea7df07-5618-47b2-afc2-e70743c160c1.png)
 
 ## Как запустить?
 
