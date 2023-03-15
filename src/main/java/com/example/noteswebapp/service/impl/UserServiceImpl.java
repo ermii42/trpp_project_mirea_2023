@@ -1,6 +1,6 @@
 package com.example.noteswebapp.service.impl;
 
-import com.example.noteswebapp.model.User;
+import com.example.noteswebapp.model.UserEntity;
 import com.example.noteswebapp.repository.UserRepository;
 import com.example.noteswebapp.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +18,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @SneakyThrows
-    public User getUser(UUID userUUID) {
-        Optional<User> optionalUser = userRepository.findById(userUUID);
+    public UserEntity getUser(UUID userUUID) {
+        Optional<UserEntity> optionalUser = userRepository.findById(userUUID);
         return optionalUser.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
     }
 
     @Override
-    public User saveUser(User user) {
+    public UserEntity saveUser(UserEntity user) {
         return userRepository.save(user);
     }
 }

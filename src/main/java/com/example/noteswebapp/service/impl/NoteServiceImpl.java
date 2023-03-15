@@ -1,6 +1,6 @@
 package com.example.noteswebapp.service.impl;
 
-import com.example.noteswebapp.model.Note;
+import com.example.noteswebapp.model.NoteEntity;
 import com.example.noteswebapp.repository.NoteRepository;
 import com.example.noteswebapp.service.NoteService;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +18,13 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     @SneakyThrows
-    public Note getNote(UUID noteUUID) {
-        Optional<Note> optionalNote = noteRepository.findById(noteUUID);
+    public NoteEntity getNote(UUID noteUUID) {
+        Optional<NoteEntity> optionalNote = noteRepository.findById(noteUUID);
         return optionalNote.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
     }
 
     @Override
-    public Note saveNote(Note note) {
+    public NoteEntity saveNote(NoteEntity note) {
         return noteRepository.save(note);
     }
 }

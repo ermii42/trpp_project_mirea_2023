@@ -1,6 +1,6 @@
 package com.example.noteswebapp.controller;
 
-import com.example.noteswebapp.model.User;
+import com.example.noteswebapp.model.UserEntity;
 import com.example.noteswebapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +15,14 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody User user){
-        User resultUser = userService.saveUser(user);
+    public ResponseEntity<UserEntity> addUser(@RequestBody UserEntity user){
+        UserEntity resultUser = userService.saveUser(user);
         return ResponseEntity.ok(resultUser);
     }
 
     @GetMapping
-    public ResponseEntity<User> getUser(@RequestParam("userUUID") UUID userUUID){
-        User user = userService.getUser(userUUID);
+    public ResponseEntity<UserEntity> getUser(@RequestParam("userUUID") UUID userUUID){
+        UserEntity user = userService.getUser(userUUID);
         return ResponseEntity.ok((user));
     }
 }

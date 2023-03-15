@@ -1,11 +1,10 @@
 package com.example.noteswebapp.service;
 
-import com.example.noteswebapp.model.Note;
-import org.springframework.data.crossstore.ChangeSetPersister;
+import com.example.noteswebapp.model.NoteEntity;
 
 import java.util.UUID;
 
 public interface NoteService {
-    Note getNote(UUID noteUUID);
-    Note saveNote(Note note);
+    NoteEntity getNote(UUID noteUUID);
+    NoteEntity saveNote(NoteEntity note);
 }
