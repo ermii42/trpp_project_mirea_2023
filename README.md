@@ -26,4 +26,4 @@
 
 ## Как запустить?
 
->команда для запуска
+>java -jar out\artifacts\notes_web_app_jar\notes-web-app.jar
