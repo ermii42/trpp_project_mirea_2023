@@ -4,19 +4,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 
 import java.util.UUID;
 
 @Entity
 @Data
-public class FileEntity {
+public class TagsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_file;
+    private UUID id_tag;
 
     private UUID id_note;
-    private String path;
 
+    private String title;
 }

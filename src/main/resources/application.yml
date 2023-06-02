@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    #    url: jdbc:mysql://localhost:3306/news_forum?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/TRPP
+
+    username: user
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update

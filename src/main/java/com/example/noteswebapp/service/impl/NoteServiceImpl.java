@@ -1,5 +1,6 @@
 package com.example.noteswebapp.service.impl;
 
+import com.example.noteswebapp.dto.NoteDTO;
 import com.example.noteswebapp.model.NoteEntity;
 import com.example.noteswebapp.repository.NoteRepository;
 import com.example.noteswebapp.service.NoteService;
@@ -20,11 +21,19 @@ public class NoteServiceImpl implements NoteService {
     @SneakyThrows
     public NoteEntity getNote(UUID noteUUID) {
         Optional<NoteEntity> optionalNote = noteRepository.findById(noteUUID);
-        return optionalNote.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
+        return optionalNote.orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 
     @Override
-    public NoteEntity saveNote(NoteEntity note) {
-        return noteRepository.save(note);
+    public NoteEntity saveNote(NoteDTO note) {
+        NoteEntity noteEntity = new NoteEntity();
+        noteEntity.setText(note.getText());
+        noteEntity.setHeader(note.getHeader());
+        return noteRepository.save(noteEntity);
+    }
+
+    @Override
+    public void deleteNote(UUID noteUUID) {
+        noteRepository.deleteById(noteUUID);
     }
 }

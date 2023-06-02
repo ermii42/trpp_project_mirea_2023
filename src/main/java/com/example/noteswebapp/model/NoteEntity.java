@@ -11,20 +11,20 @@ import java.util.UUID;
 @Data
 public class NoteEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id_note;
 
-    private UUID id_user;
+//    private UUID id_user;
     private String header;
     private String text;
-    private String style;
-    private Date reminder;
-    private String absPath;
-
-    private Date changeTime;
-    private String comment;
-    private Integer favorite; // ?????
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<FileEntity> fileList;
+//    private String style;
+//    private Date reminder;
+//    private String absPath;
+//
+//    private Date changeTime;
+//    private String comment;
+//    private Integer favorite; // ?????
+//
+//    @OneToMany(cascade = CascadeType.ALL)
+//    private List<FileEntity> fileList;
 }
